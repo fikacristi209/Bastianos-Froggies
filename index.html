@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bastianos Froggies Lembeh Dive Resort</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #092b3a;
+  --blue: #0c6170;
+  --aqua: #54c5c4;
+  --cream: #f5f3ed;
+  --gold: #c8a76a;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--navy);
+  background: var(--cream);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+.logo span {
+  display: block;
+  font: 10px 'DM Sans', sans-serif;
+  letter-spacing: 4px;
+  margin-top: 7px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--aqua);
+}
+
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(3,28,43,.8), rgba(3,28,43,.15)),
+    url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=90')
+    center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding-top: 65px;
+}
+
+.eyebrow {
+  color: var(--aqua);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.08;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #e5eeee;
+  max-width: 530px;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 28px;
+  background: var(--aqua);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  margin-left: 10px;
+}
+
+section {
+  padding: 105px 9%;
+}
+
+.section-label {
+  color: var(--blue);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+}
+
+.about-text p,
+.dive-intro p {
+  color: #63757a;
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+
+.dive-section {
+  background: var(--navy);
+  color: white;
+}
+
+.dive-intro {
+  max-width: 680px;
+  margin-bottom: 45px;
+}
+
+.dive-intro p {
+  color: #b8c9cc;
+}
+
+.dive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.dive-card {
+  background: #123b49;
+  overflow: hidden;
+}
+
+.dive-card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.dive-card:hover img {
+  transform: scale(1.05);
+}
+
+.dive-card-content {
+  padding: 28px;
+}
+
+.dive-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.dive-card p {
+  color: #b8c9cc;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-grid img:first-child {
+  grid-row: span 2;
+}
+
+.gallery-grid img:last-child {
+  grid-column: span 2;
+}
+
+.cta {
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(4,36,51,.78),rgba(4,36,51,.78)),
+    url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+  padding: 115px 20px;
+}
+
+.cta h2 {
+  max-width: 750px;
+  margin: 0 auto 20px;
+}
+
+.cta p {
+  color: #d4e2e4;
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.contact-info p {
+  color: #65777c;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  margin: 25px 0;
+}
+
+.contact-item small {
+  display: block;
+  color: var(--blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-item a {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-box {
+  background: white;
+  padding: 40px;
+}
+
+.contact-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  color: #65777c;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+footer {
+  background: #061f2b;
+  color: white;
+  padding: 35px 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer p {
+  font-size: 12px;
+  color: #a9bdc2;
+}
+
+.credit {
+  color: var(--aqua);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 850px) {
+  header {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 700px;
+    padding: 0 7%;
+  }
+
+  section {
+    padding: 75px 7%;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .dive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 190px);
+  }
+
+  .gallery-grid img:first-child {
+    grid-row: auto;
+  }
+
+  .gallery-grid img:last-child {
+    grid-column: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width: 480px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .btn {
+    padding: 14px 18px;
+    font-size: 10px;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 210px);
+  }
+
+  .contact-box {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home" class="logo">
+    BASTIANOS FROGGIES
+    <span>LEMBEH DIVE RESORT</span>
+  </a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#diving">Diving</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Discover the underwater world</div>
+    <h1>Explore the Extraordinary Lembeh Strait.</h1>
+    <p>
+      Discover an unforgettable underwater experience in Lembeh,
+      North Sulawesi, Indonesia. A destination for ocean lovers,
+      underwater explorers, and diving enthusiasts.
+    </p>
+    <a href="#diving" class="btn">Discover More</a>
+    <a href="#contact" class="btn btn-outline">Contact Us</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <img class="about-image"
+      src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85"
+      alt="Underwater diving experience">
+
+    <div class="about-text">
+      <div class="section-label">Welcome to Lembeh</div>
+      <h2>A Different Kind of Underwater Adventure.</h2>
+      <p>
+        Located in the beautiful Lembeh area of North Sulawesi,
+        Bastianos Froggies Lembeh Dive Resort is presented here as
+        a destination for travelers who want to explore the
+        underwater beauty of Indonesia.
+      </p>
+      <p>
+        The Lembeh Strait is internationally known for its remarkable
+        muck diving environment and unusual marine life. It offers
+        underwater photographers and divers a unique experience.
+      </p>
+      <a href="#contact" class="text-link">Plan Your Visit →</a>
+    </div>
+  </div>
+</section>
+
+<section class="dive-section" id="diving">
+  <div class="dive-intro">
+    <div class="section-label" style="color:#54c5c4">Underwater Discovery</div>
+    <h2>Discover the Magic Beneath the Surface.</h2>
+    <p>
+      The underwater world of Lembeh offers an extraordinary
+      environment to explore. From fascinating small creatures
+      to colorful coral life, every dive can bring a new discovery.
+    </p>
+  </div>
+
+  <div class="dive-grid">
+    <article class="dive-card">
+      <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=900&q=85"
+      alt="Colorful underwater marine life">
+      <div class="dive-card-content">
+        <h3>Marine Biodiversity</h3>
+        <p>
+          Discover the fascinating variety of marine creatures
+          that make the Lembeh Strait special.
+        </p>
+      </div>
+    </article>
+
+    <article class="dive-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85"
+      alt="Scuba diving underwater">
+      <div class="dive-card-content">
+        <h3>Scuba Diving</h3>
+        <p>
+          Experience the underwater environment and explore
+          the beauty of the ocean.
+        </p>
+      </div>
+    </article>
+
+    <article class="dive-card">
+      <img src="https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=900&q=85"
+      alt="Underwater sea creatures">
+      <div class="dive-card-content">
+        <h3>Underwater Photography</h3>
+        <p>
+          Capture the incredible details and colors of
+          underwater marine life.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="gallery-heading">
+    <div>
+      <div class="section-label">Visual Experience</div>
+      <h2>Moments Underwater.</h2>
+    </div>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1000&q=85"
+    alt="Tropical ocean">
+
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+    alt="Tropical island scenery">
+
+    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=85"
+    alt="Ocean waves">
+
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85"
+    alt="Diver exploring the ocean">
+
+    <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=900&q=85"
+    alt="Colorful marine life">
+  </div>
+</section>
+
+<section class="cta">
+  <div class="section-label" style="color:#54c5c4">
+    Your Ocean Adventure Starts Here
+  </div>
+  <h2>Ready to Discover the Beauty of Lembeh?</h2>
+  <p>Get in touch and start planning your next underwater adventure.</p>
+  <a href="mailto:fikacristi@polimdo.ac.id?subject=Inquiry%20-%20Bastianos%20Froggies%20Lembeh"
+     class="btn">Send an Inquiry</a>
+</section>
+
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get in Touch</div>
+      <h2>Let's Plan Your Next Adventure.</h2>
+      <p>
+        Have questions or want to learn more? Send an inquiry
+        through email or explore the location on Google Maps.
+      </p>
+
+      <div class="contact-item">
+        <small>Email</small>
+        <a href="mailto:fikacristi@polimdo.ac.id">
+          fikacristi@polimdo.ac.id
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <small>Destination</small>
+        <a target="_blank" rel="noopener"
+          href="https://www.google.com/maps/search/?api=1&query=Bastianos+Froggies+Lembeh+Dive+Resort">
+          Bastianos Froggies Lembeh Dive Resort ↗
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <small>Region</small>
+        <p>Lembeh, North Sulawesi, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h3>Contact the Website</h3>
+      <p>
+        Interested in learning more about the destination?
+        Click below to send an email.
+      </p>
+      <a class="btn"
+        href="mailto:fikacristi@polimdo.ac.id?subject=Website%20Inquiry">
+        Email Us →
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© 2026 Bastianos Froggies Lembeh Dive Resort. Website concept.</p>
+  <div class="credit">WEBSITE BY FIKA CRISTI</div>
+</footer>
+
+</body>
+</html>
